@@ -1,0 +1,13 @@
+diff --git a/tools/Makefile.am b/tools/Makefile.am
+index 92df266..d5e127a 100644
+--- a/tools/Makefile.am
++++ b/tools/Makefile.am
+@@ -42,7 +42,7 @@ cursor_LDADD = $(TOOL_CURSOR_LIBS)
+ endif
+ 
+ if X11_DRI3
+-noinst_PROGRAMS += dri3info
++bin_PROGRAMS += dri3info
+ dri3info_SOURCES = dri3info.c
+ dri3info_CFLAGS = $(X11_DRI3_CFLAGS) $(DRI_CFLAGS)
+ dri3info_LDADD = $(X11_DRI3_LIBS) $(DRI_LIBS)

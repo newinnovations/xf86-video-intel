@@ -79,3 +79,20 @@ core
 # For example, !report.pc overrides *.pc. See 'man gitignore'
 # 
 cscope*
+build
+debian/.debhelper
+debian/debhelper-build-stamp
+debian/tmp
+debian/files
+debian/xserver-xorg-video-intel
+debian/xserver-xorg-video-intel-dbg
+debian/xserver-xorg-video-intel-dbg.debhelper.log
+debian/xserver-xorg-video-intel-dbg.substvars
+debian/xserver-xorg-video-intel.debhelper.log
+debian/xserver-xorg-video-intel.postinst.debhelper
+debian/xserver-xorg-video-intel.postrm.debhelper
+debian/xserver-xorg-video-intel.preinst.debhelper
+debian/xserver-xorg-video-intel.prerm.debhelper
+debian/xserver-xorg-video-intel.substvars
+debian/*.log
+debian/autoreconf.*

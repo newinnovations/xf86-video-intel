@@ -1,0 +1,18 @@
+
+- debian pacakage build tools
+# apt install devscripts build-essential
+
+- build dependancies for package
+# apt build-dep xserver-xorg-video-intel
+
+- get source for package
+$ apt source xserver-xorg-video-intel
+
+- opens editor to edit the changefile, here you can increment the package version
+$ dch -i
+
+- build the package
+$ debuild -us -uc -b
+
+- clean the tree (in case of compilation issues)
+git clean -fdX
