@@ -615,6 +615,8 @@ sna_dri2_create_buffer(DrawablePtr draw,
 	size = (uint32_t)draw->height << 16 | draw->width;
 	switch (attachment) {
 	case DRI2BufferFrontLeft:
+		sna->needs_dri_flush = true;
+
 		pixmap = get_drawable_pixmap(draw);
 		buffer = NULL;
 		if (draw->type != DRAWABLE_PIXMAP)
@@ -642,12 +644,6 @@ sna_dri2_create_buffer(DrawablePtr draw,
 			assert(kgem_bo_flink(&sna->kgem, private->bo) == buffer->name);
 			assert(private->bo->pitch == buffer->pitch);
 			assert(private->bo->active_scanout);
-
-			sna_pixmap_move_to_gpu(pixmap,
-					       MOVE_READ |
-					       __MOVE_FORCE |
-					       __MOVE_DRI);
-			kgem_bo_submit(&sna->kgem, private->bo);
 
 			private->refcnt++;
 			return buffer;

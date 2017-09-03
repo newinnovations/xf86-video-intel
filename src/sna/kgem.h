@@ -587,7 +587,7 @@ static inline bool kgem_bo_can_blt(struct kgem *kgem,
 		return false;
 	}
 
-	if (kgem->gen >= 0100 && bo->proxy && bo->delta & (1 << 4)) {
+	if (kgem->gen >= 0100 && bo->proxy && bo->delta & 63) {
 		DBG(("%s: can not blt to handle=%d, delta=%d\n",
 		     __FUNCTION__, bo->handle, bo->delta));
 		return false;
